@@ -72,3 +72,19 @@ For more information regarding updating your Sentry installation, please visit [
 
 [build-status-image]: https://github.com/getsentry/onpremise/workflows/test/badge.svg
 [build-status-url]: https://git.io/JUYkh
+
+## Legal
+
+This software is &copy; Functional Software, Inc. and is licensed under the [BSL](https://github.com/getsentry/onpremise/blob/master/LICENSE). It depends on the following third-party Docker images:
+
+| Image | Copyright Holder | License |
+|:----------|:-----------------|:--------|
+| [`confluentinc/cp-zookeeper`](https://hub.docker.com/r/confluentinc/cp-zookeeper) | [Confluent, Inc.](https://www.confluent.io/) | [Apache 2](https://hub.docker.com/r/confluentinc/cp-zookeeper) |
+| [`confluentinc/cp-kafka`](https://hub.docker.com/r/confluentinc/cp-kafka) | [Confluent, Inc.](https://www.confluent.io/) | [Apache 2](https://hub.docker.com/r/confluentinc/cp-kafka) |
+| [`maxmindinc/geoipupdate`](https://hub.docker.com/r/maxmindinc/geoipupdate) | [MaxMind, Inc.](https://www.maxmind.com/) | [Apache 2](https://github.com/maxmind/geoipupdate/blob/master/LICENSE-APACHE) |
+| [`memcached`](https://hub.docker.com/_/memcached) | [Danga Interactive, Inc.](https://www.danga.com/) | [3-clause BSD](https://github.com/memcached/memcached/blob/master/LICENSE) |
+| [`nginx`](https://hub.docker.com/_/nginx) | [Nginx, Inc.](https://www.nginx.com/) | [2-clause BSD](http://nginx.org/LICENSE) |
+| [`postgres`](https://hub.docker.com/_/postgres) | [The PostgreSQL Global Development Group](https://www.postgresql.org/) | [PostgreSQL](https://www.postgresql.org/about/licence/) |
+| [`redis`](https://hub.docker.com/_/redis) | [Salvatore Sanfilippo and contributors](https://github.com/redis/redis/graphs/contributors) | [3-clause BSD](https://redis.io/topics/license) |
+| [`tianon/exim4`](https://hub.docker.com/r/tianon/exim4) | [Tianon Gravi](https://github.com/tianon) | [MIT](https://github.com/tianon/dockerfiles/blob/master/LICENSE) |
+| [`yandex/clickhouse-server`](https://hub.docker.com/r/yandex/clickhouse-server) | [Yandex LLC](https://yandex.com/company/) | [Apache 2](https://github.com/ClickHouse/ClickHouse/blob/master/LICENSE) |
