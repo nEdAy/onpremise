@@ -12,7 +12,7 @@ mail.host: 'smtp'
 # mail.port: 25
 # mail.username: ''
 # mail.password: ''
-# mail.use-tls: false
+mail.use-tls: true
 # The email address to send on behalf of
 # mail.from: 'root@localhost'
 
