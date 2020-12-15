@@ -13,8 +13,10 @@ dc="docker-compose --no-ansi"
 dcr="$dc run --rm"
 
 # Thanks to https://unix.stackexchange.com/a/145654/108960
+
+mkdir -p log
 log_file="sentry_install_log-`date +'%Y-%m-%d_%H-%M-%S'`.txt"
-exec &> >(tee -a "$log_file")
+exec &> >(tee -a "log/$log_file")
 
 MIN_DOCKER_VERSION='19.03.6'
 MIN_COMPOSE_VERSION='1.24.1'
