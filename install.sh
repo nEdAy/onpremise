@@ -105,12 +105,12 @@ function ver () { echo "$@" | awk -F. '{ printf("%d%03d%03d", $1,$2,$3); }'; }
 
 # Thanks to https://stackoverflow.com/a/25123013/90297 for the quick `sed` pattern
 function ensure_file_from_example {
-#  if [[ -f "$1" ]]; then
-#    echo "$1 already exists, skipped creation."
-#  else
-    echo "Creating $1..."
-    cp -n $(echo "$1" | sed 's/\.[^.]*$/.example&/') "$1"
-#  fi
+ if [[ -f "$1" ]]; then
+  echo "$1 already exists, remove it."
+  rm -rf "$1"
+ fi
+ echo "Creating $1..."
+ cp -n $(echo "$1" | sed 's/\.[^.]*$/.example&/') "$1"
 }
 
 if [[ "$(ver $DOCKER_VERSION)" -lt "$(ver $MIN_DOCKER_VERSION)" ]]; then
