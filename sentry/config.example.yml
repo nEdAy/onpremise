@@ -7,14 +7,14 @@
 # Mail Server #
 ###############
 
-# mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
-mail.host: 'smtp'
-# mail.port: 25
-# mail.username: ''
-# mail.password: ''
-# mail.use-tls: false
+mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
+mail.host: 'smtp.qq.com'
+mail.port: 25
+ mail.username: '1582703866@qq.com'
+mail.password: 'LSydark170960.0.'
+mail.use-tls: false
 # The email address to send on behalf of
-mail.from: 'root@sentry.neday.cn'
+mail.from: '1582703866@qq.com'
 
 # If you'd like to configure email replies, enable this.
 # mail.enable-replies: true
