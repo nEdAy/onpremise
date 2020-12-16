@@ -16,6 +16,7 @@ mail.use-tls: false
 mail.use-ssl: true
 # The email address to send on behalf of
 mail.from: 'noreply@neday.cn'
+mail.list-namespace: 'neday.cn'
 
 # If you'd like to configure email replies, enable this.
 # mail.enable-replies: true
