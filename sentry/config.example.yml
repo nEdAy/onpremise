@@ -11,7 +11,7 @@ mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
 mail.host: 'smtp.exmail.qq.com'
 mail.port: 465
 mail.username: 'admin@neday.cn'
-mail.password: 'Abcd@123'
+mail.password: 'LDAagPnsKTn55eiT'
 mail.use-tls: false
 mail.use-ssl: true
 # The email address to send on behalf of
