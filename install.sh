@@ -13,8 +13,10 @@ dc="docker-compose --no-ansi"
 dcr="$dc run --rm"
 
 # Thanks to https://unix.stackexchange.com/a/145654/108960
+
+mkdir -p log
 log_file="sentry_install_log-`date +'%Y-%m-%d_%H-%M-%S'`.txt"
-exec &> >(tee -a "$log_file")
+exec &> >(tee -a "log/$log_file")
 
 MIN_DOCKER_VERSION='19.03.6'
 MIN_COMPOSE_VERSION='1.24.1'
@@ -103,12 +105,12 @@ function ver () { echo "$@" | awk -F. '{ printf("%d%03d%03d", $1,$2,$3); }'; }
 
 # Thanks to https://stackoverflow.com/a/25123013/90297 for the quick `sed` pattern
 function ensure_file_from_example {
-  if [[ -f "$1" ]]; then
-    echo "$1 already exists, skipped creation."
-  else
-    echo "Creating $1..."
-    cp -n $(echo "$1" | sed 's/\.[^.]*$/.example&/') "$1"
-  fi
+ if [[ -f "$1" ]]; then
+  echo "$1 already exists, remove it."
+  rm -rf "$1"
+ fi
+ echo "Creating $1..."
+ cp -n $(echo "$1" | sed 's/\.[^.]*$/.example&/') "$1"
 }
 
 if [[ "$(ver $DOCKER_VERSION)" -lt "$(ver $MIN_DOCKER_VERSION)" ]]; then
@@ -336,7 +338,7 @@ if [[ "$MINIMIZE_DOWNTIME" ]]; then
 
   echo "Waiting for Sentry to start..."
   docker run --rm --network="${COMPOSE_PROJECT_NAME}_default" alpine ash \
-    -c 'while [[ "$(wget -T 1 -q -O- http://web:9000/_health/)" != "ok" ]]; do sleep 0.5; done'
+    -c 'while [[ "$(wget -T 1 -q -O- https://web/_health/)" != "ok" ]]; do sleep 0.5; done'
 
   # Make sure everything is up. This should only touch relay and nginx
   $dc up -d

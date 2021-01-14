@@ -224,6 +224,7 @@ services:
   nginx:
     << : *restart_policy
     ports:
+      - '443:443'
       - '$SENTRY_BIND:80/tcp'
     image: 'nginx:1.16'
     volumes:
